@@ -16,11 +16,11 @@ shinyUI(pageWithSidebar(
                  min = 1, max = 10, value = 10),
 
     radioButtons(inputId = "radio_domestic_total",
-                 label = "Domestic or Total",
+                 label = "Domestic, Total, or Imports",
                  choices = list("Domestic" = "Domestic", "Total" = "Total", "Imports" = "Imports")),
     
-    radioButtons(inputId = "total_direct_indirect",
-                 label = "Direct, Indirect or Total",
+    radioButtons(inputId = "radio_total_direct_indirect",
+                 label = "Direct, Indirect, or Total",
                  choices = list("Total" = "Total", "Direct" = "Direct", "Indirect" = "Indirect")),
 
     selectInput(inputId = "select_year",

@@ -8,10 +8,16 @@ library(rempreq)
 shinyServer(function(input, output) {
   
   run_params <- eventReactive(input$go, {
-    x <- str(input$numeric_prod_amount)
     validate(
       need(is.numeric(input$numeric_prod_amount), "Please input a valid numeric production amount (million$)")
     )
+    if (input$radio_total_direct_indirect == 'Total') {
+      use_fun <- emp_impact_all_sectors
+    } else if (input$radio_total_direct_indirect == 'Direct') {
+      use_fun <- direct_emp_impact
+    } else
+      use_fun <- indirect_emp_impact
+    
     if (input$radio_domestic_total == 'Domestic') {
       use_table <- dom_table_list
     } else if (input$radio_domestic_total == 'Total') {
@@ -19,7 +25,7 @@ shinyServer(function(input, output) {
     } else
       use_table <- imports_table_list
     
-    employment <- formatC(emp_impact_all_sectors(as.numeric(input$select_sector), 
+    employment <- formatC(use_fun(as.numeric(input$select_sector), 
                                          input$numeric_prod_amount, 
                                          input$select_year,
                                          use_table), digits =  2, format = "f", big.mark = ",")
