@@ -1,3 +1,7 @@
+# Allan Miller
+# allan amilleranalytics.com
+# License: GPL-2
+
 empImpactServer <- function(input, output, session) {
   
   

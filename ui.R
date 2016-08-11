@@ -1,3 +1,6 @@
+# Allan Miller
+# allan amilleranalytics.com
+# License: GPL-2
 ##############################
 ### data Types - ui.R ########
 ##############################

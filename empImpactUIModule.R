@@ -1,4 +1,7 @@
 # Module Tabs UI function
+# Allan Miller
+# allan amilleranalytics.com
+# License: GPL-2
 
 # Employment impact for a given year:
 empImpactUI <- function(id) {

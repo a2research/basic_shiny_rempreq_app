@@ -1,6 +1,10 @@
+# Allan Miller
+# allan amilleranalytics.com
+# License: GPL-2
 ##########################################
 ##### data types and values - server.R ###
 ##########################################
+
 
 
 source('empImpactServerModule.R')
